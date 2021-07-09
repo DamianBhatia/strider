@@ -1,8 +1,10 @@
 import React from 'react'
+import {NativeRouter, Switch, Route } from 'react-router-native'
 import { Text, StatusBar, View } from 'react-native'
 import Home from './screens/home/Home'
 import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
+import Login from './screens/logIn/Login'
 
 export default App = () => {
 
@@ -15,10 +17,18 @@ export default App = () => {
     return <AppLoading />
   } else {
     return (
-      <View>
-        <StatusBar hidden />
-        <Home />
-      </View>
+      <NativeRouter>
+        <View>
+          <StatusBar />
+          <Switch>
+            <Route exact path="/" component={Login}/>
+          </Switch>
+          <Switch>
+            <Route exact path="/home" component={Home}/>
+          </Switch>
+        </View>
+      </NativeRouter>
+      
     )
   }
 }
