@@ -1,21 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { Text, StatusBar, View } from 'react-native'
+import Home from './screens/home/Home'
+import { useFonts } from 'expo-font'
+import AppLoading from 'expo-app-loading'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Hello World</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default App = () => {
+
+  let [fontsLoaded] = useFonts({
+    'Monteserrat-Regular-400': require('./assets/fonts/Montserrat-Regular-400.ttf'),
+    'Montserrat-Bold-700': require('./assets/fonts/Montserrat-Bold-700.ttf')
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />
+  } else {
+    return (
+      <View>
+        <StatusBar hidden />
+        <Home />
+      </View>
+    )
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
