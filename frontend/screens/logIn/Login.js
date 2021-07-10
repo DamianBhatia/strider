@@ -19,11 +19,13 @@ export default Login = ({ history }) => {
             <ImageBackground source = {backgroundImage}  resizeMode="cover" style={styles.image} imageStyle={{ opacity: 0.6 }}>
                 <LoginHeader />
                 <LoginInputs />
-                <LoginButton history = {history} label = {"Sign Up"}/>
-                <View style={styles.orContainer}>
-                    <Text style={styles.or}> or </Text>
+                <View style={styles.buttonsContainer}>
+                    <LoginButton history = {history} label = {"Sign Up"}/>
+                    <View style={styles.orContainer}>
+                        <Text style={styles.or}> or </Text>
+                    </View>
+                    <LoginButton history = {history} label = {"Sign Up with Google"} icon = {<GoogleIcon height = {20} width = {30} />}/>
                 </View>
-                <LoginButton history = {history} label = {"Sign Up with Google"} icon = {<GoogleIcon height = {20} width = {30} />}/>
                 <View style={styles.signIn}>
                     <Text style={{color: 'white', fontSize: 18}}>Already have an account?</Text>
                     <TouchableOpacity><Text style={styles.signInText}>Sign In</Text></TouchableOpacity>
