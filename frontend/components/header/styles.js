@@ -15,5 +15,6 @@ export default styles = StyleSheet.create({
         fontSize: 30,
         fontFamily: 'Montserrat-Bold-700',
         color: COLORS.primary
-    }
+    },
+
 })

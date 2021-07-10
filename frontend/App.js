@@ -18,7 +18,7 @@ export default App = () => {
   } else {
     return (
       <NativeRouter>
-        <View>
+        <View style={{flex:1}}>
           <StatusBar />
           <Switch>
             <Route exact path="/" component={Login}/>

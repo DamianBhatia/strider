@@ -3,12 +3,31 @@ import { COLORS } from '../../utilities/colors'
 
 export default styles = StyleSheet.create({
     container: {
-        backgroundColor: COLORS.background,
-        marginTop: 100,
-        marginLeft: 20
+        backgroundColor: COLORS.primary,
+        flex:1,
     },
     image: {
-        justifyContent: "center"
+        flex: 1,
       },
-
+    orContainer: {
+        alignItems: 'center',
+        paddingVertical: "3%"
+    },
+    or: {
+       fontSize:18,
+       color: COLORS.background
+        
+    },
+    signIn: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: '40%'
+        
+        
+    },
+    signInText: {
+        color: "#85D3FF",
+        fontSize: 18
+    }   
 })
