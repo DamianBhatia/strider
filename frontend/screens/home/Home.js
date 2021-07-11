@@ -1,10 +1,13 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
+import { StatusBar } from 'expo-status-bar'
 import styles from './styles'
 import Header from '../../components/header/Header'
+import { SafeAreaView } from 'react-navigation'
 
 export default Home = () => (
-        <View style={styles.container}>
-            <Header />
-        </View>
+    <SafeAreaView style={styles.container}>
+        <StatusBar />
+        <Header />
+    </SafeAreaView>
 )

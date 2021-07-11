@@ -1,5 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, StatusBar } from 'react-native'
 import { COLORS } from '../../utilities/colors'
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
 export default styles = StyleSheet.create({
     container: {
@@ -7,7 +8,8 @@ export default styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        height: 56,
+        justifyContent: 'center',
+        height: hp(5.5),
         shadowColor: '#000',
         shadowOffset: {
             width: 0,
@@ -20,23 +22,24 @@ export default styles = StyleSheet.create({
         display: 'flex',
         flex: 1,
         alignItems: 'flex-start',
-        paddingLeft: '2%',
+        paddingLeft: '3%',
     },
     center: {
         display: 'flex',
         flex: 2,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     right: {
         display: 'flex',
         flex: 1,
         alignItems: 'flex-end',
-        paddingRight: '2%',
+        paddingRight: '3%',
     },
     title: {
         fontSize: 24,
         fontFamily: 'Montserrat-Bold-700',
         color: COLORS.primary
-    }
+    },
+
 })

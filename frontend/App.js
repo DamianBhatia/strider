@@ -1,6 +1,6 @@
 import React from 'react'
 import {NativeRouter, Switch, Route } from 'react-router-native'
-import { StatusBar, View } from 'react-native'
+import { View } from 'react-native'
 import Home from './screens/home/Home'
 import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
@@ -19,8 +19,7 @@ export default App = () => {
   } else {
     return (
       <NativeRouter>
-        <View>
-          <StatusBar hidden/>
+        <View style={{flex:1}}>
           <Switch>
             <Route exact path="/" component={Login}/>
           </Switch>
