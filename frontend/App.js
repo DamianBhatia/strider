@@ -1,10 +1,10 @@
 import React from 'react'
 import {NativeRouter, Switch, Route } from 'react-router-native'
-import { Text, StatusBar, View } from 'react-native'
+import { StatusBar, View } from 'react-native'
 import Home from './screens/home/Home'
 import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
-import Login from './screens/login/Login'
+import Login from './screens/logIn/Login'
 
 export default App = () => {
 
