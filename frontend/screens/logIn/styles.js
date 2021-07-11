@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native'
+import { heightPercentageToDP } from 'react-native-responsive-screen'
 import { COLORS } from '../../utilities/colors'
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
+
 
 export default styles = StyleSheet.create({
     container: {
@@ -22,9 +25,10 @@ export default styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: '40%'
-        
-        
+        height:hp (5)  
+    },
+    buttonsContainer: {
+        height:hp(25)
     },
     signInText: {
         color: "#85D3FF",

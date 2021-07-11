@@ -1,26 +1,30 @@
 import React from 'react'
 import { Button, StyleSheet } from 'react-native'
 import { COLORS } from '../../utilities/colors'
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
 export default styles = StyleSheet.create({
     title: {
         fontSize: 60,
         fontFamily: 'Montserrat-Bold-700',
         color: COLORS.background,
+        marginTop: "25%"
     },
     container: {
         display: 'flex',
         alignItems: 'center',
         height: "8%",
-        marginTop: "50%",
+        justifyContent: 'center',
         position: 'relative',
+        height: hp(35)
     },
     TextInputContainer: {
         display: 'flex',
         flexDirection: 'column',
         padding: "5%",
         alignItems: 'center',
-        marginTop: "10%"
+        justifyContent:'center',
+        height: hp(25)
 
     },
     TextInput: {
