@@ -1,10 +1,11 @@
 import React from 'react'
-import {View, ImageBackground,Text, TouchableOpacity,Image} from 'react-native'
+import {View, ImageBackground,Text, TouchableOpacity } from 'react-native'
+import { StatusBar } from 'expo-status-bar'
 import styles from './styles'
 import LoginHeader from '../../components/LoginPage/LoginHeader'
 import LoginInputs from '../../components/LoginPage/LoginInputs'
 import LoginButton from '../../components/LoginPage/LoginButton'
-import GoogleIcon from "../../assets/Icons/google.svg"
+import GoogleIcon from '../../assets/icons/google.svg'
 
 const backgroundImage = require("../../assets/images/building.png")
 
@@ -15,7 +16,7 @@ const backgroundImage = require("../../assets/images/building.png")
 export default Login = ({ history }) => {
     return(
         <View style = {styles.container}>
-            
+            <StatusBar /> 
             <ImageBackground source = {backgroundImage}  resizeMode="cover" style={styles.image} imageStyle={{ opacity: 0.6 }}>
                 <LoginHeader />
                 <LoginInputs />
