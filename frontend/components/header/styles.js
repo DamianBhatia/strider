@@ -1,4 +1,4 @@
-import { StyleSheet, StatusBar } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { COLORS } from '../../utilities/colors'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 

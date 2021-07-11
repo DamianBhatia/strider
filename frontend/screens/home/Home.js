@@ -1,5 +1,4 @@
 import React from 'react'
-import { View } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import styles from './styles'
 import Header from '../../components/header/Header'

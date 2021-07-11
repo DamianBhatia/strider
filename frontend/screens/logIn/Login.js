@@ -5,7 +5,7 @@ import styles from './styles'
 import LoginHeader from '../../components/LoginPage/LoginHeader'
 import LoginInputs from '../../components/LoginPage/LoginInputs'
 import LoginButton from '../../components/LoginPage/LoginButton'
-import GoogleIcon from "../../assets/Icons/google.svg"
+import GoogleIcon from '../../assets/icons/google.svg'
 
 const backgroundImage = require("../../assets/images/building.png")
 
