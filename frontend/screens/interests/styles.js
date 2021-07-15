@@ -25,14 +25,6 @@ export default styles = StyleSheet.create({
         fontWeight: 'bold',
         fontFamily: 'Montserrat-Bold-700'
     },
-    inputContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        padding: "5%",
-        alignItems: 'center',
-        justifyContent:'center',
-        height: hp(25),
-    },
     SelectionContainer: {
         alignItems: 'center',
         flexDirection: 'row',
