@@ -6,7 +6,7 @@ export default LoginButton = (props) => {
     const {history, label, icon} = props
     return(
         <View>
-            <TouchableOpacity style={styles.button} onPress = {()=>history.push("/home")}>
+            <TouchableOpacity style={styles.button} onPress = {()=>history.push("/interests")}>
                 {icon}
                 <Text style={styles.buttonText}>{label}</Text>
             </TouchableOpacity>

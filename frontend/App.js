@@ -5,6 +5,7 @@ import Home from './screens/home/Home'
 import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
 import Login from './screens/logIn/Login'
+import Interest from './screens/interests/Interests'
 
 export default App = () => {
 
@@ -24,6 +25,9 @@ export default App = () => {
         <View style={{flex:1}}>
           <Switch>
             <Route exact path="/" component={Login}/>
+          </Switch>
+          <Switch>
+            <Route exact path="/interests" component={Interest}/>
           </Switch>
           <Switch>
             <Route exact path="/home" component={Home}/>

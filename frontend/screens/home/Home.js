@@ -1,12 +1,11 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
-import { TouchableOpacity, View } from 'react-native'
+import { View } from 'react-native'
 import styles from './styles'
 import Header from '../../components/header/Header'
 import JobCard from '../../components/jobCard/JobCard'
 import ActionButton from '../../components/actionButton/ActionButton'
 import { SafeAreaView } from 'react-navigation'
-import { COLORS } from '../../utilities/colors'
 
 export default Home = () => (
     <SafeAreaView style={styles.container}>

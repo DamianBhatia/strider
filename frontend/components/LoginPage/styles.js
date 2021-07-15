@@ -12,7 +12,6 @@ export default styles = StyleSheet.create({
     container: {
         display: 'flex',
         alignItems: 'center',
-        height: "8%",
         justifyContent: 'center',
         position: 'relative',
         height: hp(35)
@@ -32,7 +31,8 @@ export default styles = StyleSheet.create({
         borderBottomWidth: 2,
         fontSize: 30,
         marginBottom: "10%",
-        paddingRight: "50%"
+        width: wp(80),
+        maxWidth: wp(80)
     },
     button: {
         backgroundColor: COLORS.background,
