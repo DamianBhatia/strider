@@ -5,13 +5,16 @@ import Home from './screens/home/Home'
 import { useFonts } from 'expo-font'
 import AppLoading from 'expo-app-loading'
 import Login from './screens/logIn/Login'
+import Interest from './screens/interests/Interests'
 
 export default App = () => {
 
   // Loading fonts for use within all components
   let [fontsLoaded] = useFonts({
-    'Monteserrat-Regular-400': require('./assets/fonts/Montserrat-Regular-400.ttf'),
-    'Montserrat-Bold-700': require('./assets/fonts/Montserrat-Bold-700.ttf')
+    'Montserrat-Regular-400': require('./assets/fonts/Montserrat/Montserrat-Regular-400.ttf'),
+    'Montserrat-Bold-700': require('./assets/fonts/Montserrat/Montserrat-Bold-700.ttf'),
+    'Montserrat-Medium-500': require('./assets/fonts/Montserrat/Montserrat-Medium-500.ttf'),
+    'Aleo-Regular': require('./assets/fonts/Aleo/Aleo-Regular.otf'),
   });
 
   if (!fontsLoaded) {
@@ -22,6 +25,9 @@ export default App = () => {
         <View style={{flex:1}}>
           <Switch>
             <Route exact path="/" component={Login}/>
+          </Switch>
+          <Switch>
+            <Route exact path="/interests" component={Interest}/>
           </Switch>
           <Switch>
             <Route exact path="/home" component={Home}/>
