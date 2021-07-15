@@ -10,8 +10,10 @@ export default App = () => {
 
   // Loading fonts for use within all components
   let [fontsLoaded] = useFonts({
-    'Monteserrat-Regular-400': require('./assets/fonts/Montserrat-Regular-400.ttf'),
-    'Montserrat-Bold-700': require('./assets/fonts/Montserrat-Bold-700.ttf')
+    'Montserrat-Regular-400': require('./assets/fonts/Montserrat/Montserrat-Regular-400.ttf'),
+    'Montserrat-Bold-700': require('./assets/fonts/Montserrat/Montserrat-Bold-700.ttf'),
+    'Montserrat-Medium-500': require('./assets/fonts/Montserrat/Montserrat-Medium-500.ttf'),
+    'Aleo-Regular': require('./assets/fonts/Aleo/Aleo-Regular.otf'),
   });
 
   if (!fontsLoaded) {
