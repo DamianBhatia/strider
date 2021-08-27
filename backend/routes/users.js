@@ -1,12 +1,6 @@
 const router = require('express').Router();
 let User = require('../modals/user.modal')
 
-router.route('/').get((req,res)=>{
-    User.find()
-    .then(users => res.json(user))
-    .catch(err => res.status(400),json('Error: '+err))
-})
-
 router.route('/add').post((req,res)=>{
     const username = req.body.username
     const newUser  = new User({username})
