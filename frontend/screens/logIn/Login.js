@@ -12,10 +12,8 @@ const backgroundImage = require("../../assets/images/building.png")
 
 const newUser = async () => {
     console.log('fired')
-    await axios.post('http://199.7.157.117:5000/users/add', {
-        username: 'Damian2'
-    }).then((res)=>{
-        console.log(res)
+    await axios.get('https://southportstrive.herokuapp.com').then(({request})=>{
+        console.log(request._response)
     }).catch(({ message, request })=>{
         console.log(message)
     })

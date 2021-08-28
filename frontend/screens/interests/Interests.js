@@ -1,15 +1,15 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, ScrollView} from 'react-native'
 import styles from './styles'
-import Icon from '../../../node_modules/@expo/vector-icons/Ionicons'
+import Icon from '../../node_modules/@expo/vector-icons/Ionicons'
 import { COLORS } from '../../utilities/colors'
 import SelectButton from '../../components/selectButton/SelectButton'
-import SampleInterestsdata from '../../../backend/sampleDataBase/SampleInterestsdata'
+import SampleInterests from '../../sampleDataBase/Interests'
 import CustomTextInput from '../../components/customTextInput/CustomTextInput'
 
 
 export default Interests = ({history}) => {
-    const interests = SampleInterestsdata()
+    const interests = SampleInterests()
     
     return (
         <ScrollView>

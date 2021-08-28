@@ -1,5 +1,6 @@
 
-export default SampleInterestsData = () => {
+
+export default SampleInterests = () => {
     return [
         "Software Engineer",
         "Consultant",
