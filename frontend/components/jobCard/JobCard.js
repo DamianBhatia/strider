@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, Text, View } from 'react-native'
 import styles from './styles.js'
-import { FontAwesome5 } from '../../../node_modules/@expo/vector-icons'
+import { FontAwesome5 } from '../../node_modules/@expo/vector-icons'
 
 const jobImage = require('../../assets/images/test_job.png')
 

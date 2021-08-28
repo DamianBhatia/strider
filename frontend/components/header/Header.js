@@ -1,8 +1,8 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 import styles from './styles'
-import { Ionicons } from '../../../node_modules/@expo/vector-icons'
-import { Feather } from '../../../node_modules/@expo/vector-icons'
+import { Ionicons } from '../../node_modules/@expo/vector-icons'
+import { Feather } from '../../node_modules/@expo/vector-icons'
 import { COLORS } from '../../utilities/colors'
 
 export default Header = () => (
