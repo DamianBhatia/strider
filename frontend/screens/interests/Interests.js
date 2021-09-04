@@ -8,6 +8,9 @@ import CustomTextInput from '../../components/customTextInput/CustomTextInput'
 
 
 export default Interests = ({history}) => {    
+
+    var interests = ['software engineer', 'data scientist', 'biologist', 'veterinarian', 'professor'];
+
     return (
         <ScrollView>
             <View style = {styles.container}>
