@@ -4,13 +4,10 @@ import styles from './styles'
 import Icon from '../../node_modules/@expo/vector-icons/Ionicons'
 import { COLORS } from '../../utilities/colors'
 import SelectButton from '../../components/selectButton/SelectButton'
-import SampleInterests from '../../sampleDataBase/Interests'
 import CustomTextInput from '../../components/customTextInput/CustomTextInput'
 
 
-export default Interests = ({history}) => {
-    const interests = SampleInterests()
-    
+export default Interests = ({history}) => {    
     return (
         <ScrollView>
             <View style = {styles.container}>
