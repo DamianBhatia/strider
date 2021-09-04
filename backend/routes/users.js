@@ -2,7 +2,9 @@ const router = require('express').Router();
 const { create } = require('domain');
 const fs = require('fs');
 const {db} =require('../services/dbConnection')
-
+/**
+ * add user to db end point 
+ */
 router.route('/add').post((req,res)=>{
     const {
         firstName,
