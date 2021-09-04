@@ -1,11 +1,13 @@
 const router = require('express').Router();
-const { db } = require('../services/dbConnection')
+const fs = require('fs');
+const { db } = require('../services/dbConnection');
 
 /**
  * Get all jobs from database
  */
 router.route('/get').get((req, res) => {
-    db.query('SELECT * FROM jobs', (err, results) => {
+    var query = fs.readFileSync('sql/get_all_jobs.sql').toString();
+    db.query(query, (err, results) => {
         if (err) throw err
         res.status(200).json(results.rows)
     })

@@ -9,5 +9,5 @@ const db = new Pool({
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 module.exports = {
-    pool
+    db
 }
