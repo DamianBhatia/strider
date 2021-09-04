@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const fs = require('fs');
 
 // Setup Postgresql connection
 const Pool = require('pg').Pool
@@ -14,9 +15,9 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
  * Get all jobs from database
  */
 router.route('/get').get((req, res) => {
-    pool.query('SELECT * FROM jobs', (err, results) => {
+    var query = fs.readFileSync('sql/get_all_jobs.sql').toString();
+    pool.query(query, (err, results) => {
         if (err) throw err
-        
         res.status(200).json(results.rows)
     })
 })
