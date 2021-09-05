@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, ImageBackground,Text, TouchableOpacity, Button } from 'react-native'
+import {View, ImageBackground,Text, TouchableOpacity, Button, Alert } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import styles from './styles'
 import LoginHeader from '../../components/LoginPage/LoginHeader'
@@ -7,22 +7,37 @@ import LoginInputs from '../../components/LoginPage/LoginInputs'
 import LoginButton from '../../components/LoginPage/LoginButton'
 import GoogleIcon from '../../assets/icons/google.svg'
 import axios from 'axios'
-import bcrypt from 'bcryptjs'
 
 const backgroundImage = require("../../assets/images/building.png")
 
 const newUser = async () => {    
     console.log('fired')
     await axios.post('https://southportstrive.herokuapp.com/users/add',{
-        firstName: 'Matthew',
-        lastName: 'Asaad',
-        email: 'asaad123@outlook.com',
-        password: 'password'
+        firstName: 'Aco',
+        lastName: 'Stojanovic',
+        email: 'aca12365@outlook.com',
+        password: 'Security12365!'
     }).then(({request})=>{
         console.log(request._response)
     }).catch(({ message, request })=>{
         console.log(message)
     })
+}
+
+const userLogin = async (email,password,history) => {
+    console.log("fired userLogin")
+    try{
+        const LoggedIn = await axios.get(`https://southportstrive.herokuapp.com/users/login/${email}/${password}`)
+        console.log(LoggedIn)
+        if(LoggedIn) {
+            history.push("/interests")
+        }else {
+            alert("ERROR\nEmail or password is incorrect, please try again")
+        }
+    } catch(e){
+        console.log(e.message)
+    }
+
 }
 
 
@@ -38,7 +53,7 @@ export default Login = ({ history }) => {
                 <LoginHeader />
                 <LoginInputs />
                 <View style={styles.buttonsContainer}>
-                    <LoginButton history = {history} label = {"Sign In"}/>
+                    <LoginButton onPress = {()=>userLogin('asaad123@outlook.com','password',history)} history = {history} label = {"Sign In"}/>
                     <View style={styles.orContainer}>
                         <Text style={styles.or}> or </Text>
                     </View>

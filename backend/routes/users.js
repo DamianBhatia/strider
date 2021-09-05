@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { create } = require('domain');
 const fs = require('fs');
 const {db} =require('../services/dbConnection')
-const {encrypt,dcrypt} = require('../services/crypt')
+const {encrypt,dcrypt,test} = require('../services/crypt')
 /**
  * add user to db end point 
  */
@@ -32,9 +32,10 @@ router.route('/login/:email/:password').get((req,res)=>{
     let isGoodCredentials;
     db.query(getUser, [email],(err,results) => {
         if (err) throw err
-        res.status(200).json(results.rows)
         const {rows: [{password: hash}]} = results
         isGoodCredentials = dcrypt(password, hash)
+        res.status(200).json(isGoodCredentials)
+        
     })
 
     return isGoodCredentials
