@@ -7,12 +7,18 @@ import LoginInputs from '../../components/LoginPage/LoginInputs'
 import LoginButton from '../../components/LoginPage/LoginButton'
 import GoogleIcon from '../../assets/icons/google.svg'
 import axios from 'axios'
+import bcrypt from 'bcryptjs'
 
 const backgroundImage = require("../../assets/images/building.png")
 
-const newUser = async () => {
+const newUser = async () => {    
     console.log('fired')
-    await axios.get('https://southportstrive.herokuapp.com').then(({request})=>{
+    await axios.post('https://southportstrive.herokuapp.com/users/add',{
+        firstName: 'Matthew',
+        lastName: 'Asaad',
+        email: 'asaad123@outlook.com',
+        password: 'password'
+    }).then(({request})=>{
         console.log(request._response)
     }).catch(({ message, request })=>{
         console.log(message)
@@ -32,19 +38,15 @@ export default Login = ({ history }) => {
                 <LoginHeader />
                 <LoginInputs />
                 <View style={styles.buttonsContainer}>
-                    <LoginButton history = {history} label = {"Sign Up"}/>
+                    <LoginButton history = {history} label = {"Sign In"}/>
                     <View style={styles.orContainer}>
                         <Text style={styles.or}> or </Text>
                     </View>
-                    <LoginButton history = {history} label = {"Sign Up with Google"} icon = {<GoogleIcon height = {20} width = {30} />}/>
-                    <Button 
-                        title="Login"
-                        onPress={()=>{newUser()}}
-                    />
+                    <LoginButton history = {history} label = {"Sign In with Google"} icon = {<GoogleIcon height = {20} width = {30} />}/>
                 </View>
                 <View style={styles.signIn}>
-                    <Text style={{color: 'white', fontSize: 18}}>Already have an account?</Text>
-                    <TouchableOpacity><Text style={styles.signInText}>Sign In</Text></TouchableOpacity>
+                    <Text style={{color: 'white', fontSize: 18}}>Don't have an account?</Text>
+                    <TouchableOpacity onPress = {()=>{newUser()}}><Text style={styles.signInText}>Sign Up</Text></TouchableOpacity>
                 </View>
             </ImageBackground>
          </View>     
