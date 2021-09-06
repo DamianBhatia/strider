@@ -33,23 +33,5 @@ export default styles = StyleSheet.create({
     signInText: {
         color: "#85D3FF",
         fontSize: 18
-    } ,
-    TextInputContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        padding: "5%",
-        alignItems: 'center',
-        justifyContent:'center',
-        height: hp(25)
-
-    },
-    TextInput: {
-        color: COLORS.background,
-        borderBottomColor: COLORS.background,
-        borderBottomWidth: 2,
-        fontSize: 30,
-        marginBottom: "10%",
-        width: wp(80),
-        maxWidth: wp(80)
-    },
+    }   
 })

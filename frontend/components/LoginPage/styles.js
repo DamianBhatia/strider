@@ -16,7 +16,24 @@ export default styles = StyleSheet.create({
         position: 'relative',
         height: hp(35)
     },
-  
+    TextInputContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        padding: "5%",
+        alignItems: 'center',
+        justifyContent:'center',
+        height: hp(25)
+
+    },
+    TextInput: {
+        color: COLORS.background,
+        borderBottomColor: COLORS.background,
+        borderBottomWidth: 2,
+        fontSize: 30,
+        marginBottom: "10%",
+        width: wp(80),
+        maxWidth: wp(80)
+    },
     button: {
         backgroundColor: COLORS.background,
         borderRadius: 20,

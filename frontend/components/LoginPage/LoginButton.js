@@ -3,10 +3,10 @@ import { View, TouchableOpacity, Text } from 'react-native'
 import styles from './styles'
 
 export default LoginButton = (props) => {
-    const {history, label, icon, onPress} = props
+    const {history, label, icon} = props
     return(
         <View>
-            <TouchableOpacity style={styles.button} onPress = {onPress}>
+            <TouchableOpacity style={styles.button} onPress = {()=>history.push("/interests")}>
                 {icon}
                 <Text style={styles.buttonText}>{label}</Text>
             </TouchableOpacity>
