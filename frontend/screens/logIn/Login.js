@@ -1,12 +1,12 @@
-import React from 'react'
-import {View, ImageBackground,Text, TouchableOpacity, Button, Alert } from 'react-native'
+import React, {useState} from 'react'
+import {View, ImageBackground,Text, TouchableOpacity, TextInput } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import styles from './styles'
 import LoginHeader from '../../components/LoginPage/LoginHeader'
-import LoginInputs from '../../components/LoginPage/LoginInputs'
 import LoginButton from '../../components/LoginPage/LoginButton'
 import GoogleIcon from '../../assets/icons/google.svg'
 import axios from 'axios'
+import LoadingState from '../../components/loadingState/LoadingState'
 
 const backgroundImage = require("../../assets/images/building.png")
 
@@ -24,21 +24,33 @@ const newUser = async () => {
     })
 }
 
-const userLogin = async (email,password,history) => {
-    console.log("fired userLogin")
-    try{
-        const LoggedIn = await axios.get(`https://southportstrive.herokuapp.com/users/login/${email}/${password}`)
-        console.log(LoggedIn)
-        if(LoggedIn) {
-            history.push("/interests")
-        }else {
-            alert("ERROR\nEmail or password is incorrect, please try again")
-        }
-    } catch(e){
-        console.log(e.message)
-    }
+const userLogin = async (email,password,history,onLoading) => {
 
-}
+    if (!email){
+        alert("Please enter an email")
+    }else if(!password){
+        alert("Please enter a password")
+    }else{
+        try{
+            console.log("fired userLogin")
+            onLoading(true)
+            const {data: LoggedIn} = await axios.get(`https://southportstrive.herokuapp.com/users/login/${email}/${password}`)
+            console.log(LoggedIn)
+            onLoading(false)
+            if(LoggedIn) {
+                history.push("/interests")
+            }else {
+                alert("ERROR\nEmail or password is incorrect, please try again")
+            }
+    
+        } catch(e){
+            alert("X X\n____\nSomthing went wrong")
+            onLoading(false)
+            console.log(e.message)
+        }
+    }
+}   
+    
 
 
 /**
@@ -46,14 +58,35 @@ const userLogin = async (email,password,history) => {
  * @returns {jsx} renders loging screen
  */
 export default Login = ({ history }) => {
+    const [email, onEmail] = useState('')
+    const [password, onPassword] = useState('')
+    const [loading, onLoading] = useState(false)
+    //const [error, onError] = useState("Email or password is incorrect, please try again") *Explore this feature later for now we use alerts
     return(
         <View style = {styles.container}>
             <StatusBar /> 
             <ImageBackground source = {backgroundImage}  resizeMode="cover" style={styles.image} imageStyle={{ opacity: 0.6 }}>
                 <LoginHeader />
-                <LoginInputs />
+                <View style= {styles.TextInputContainer}>
+                    <View>
+                        <TextInput 
+                            placeholder={'email'}
+                            style= {styles.TextInput}
+                            placeholderTextColor = 'white'
+                            value={email}
+                            onChangeText={(text)=>onEmail(text)}
+                        />
+                        <TextInput
+                            placeholder={"password"}
+                            style= {styles.TextInput}
+                            placeholderTextColor = 'white'
+                            value={password}
+                            onChangeText={(text)=>onPassword(text)}
+                        />
+                    </View>
+                </View>
                 <View style={styles.buttonsContainer}>
-                    <LoginButton onPress = {()=>userLogin('asaad123@outlook.com','password',history)} history = {history} label = {"Sign In"}/>
+                    <LoginButton onPress = {()=>userLogin(email,password,history,onLoading)} history = {history} label = {"Sign In"}/>
                     <View style={styles.orContainer}>
                         <Text style={styles.or}> or </Text>
                     </View>
@@ -61,9 +94,10 @@ export default Login = ({ history }) => {
                 </View>
                 <View style={styles.signIn}>
                     <Text style={{color: 'white', fontSize: 18}}>Don't have an account?</Text>
-                    <TouchableOpacity onPress = {()=>{newUser()}}><Text style={styles.signInText}>Sign Up</Text></TouchableOpacity>
+                    <TouchableOpacity onPress = {()=>{history.push('/signup')}}><Text style={styles.signInText}>Sign Up</Text></TouchableOpacity>
                 </View>
             </ImageBackground>
+            {loading && <LoadingState loading = {loading}/>}
          </View>     
     )
 }
