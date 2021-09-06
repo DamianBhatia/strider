@@ -63,7 +63,7 @@ export default styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent:'center',
         alignItems: 'center',
-        marginBottom: '5%',
+        marginBottom: '4%',
         marginTop: "15%"
     },
     continue:{
