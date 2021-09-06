@@ -1,1 +1,1 @@
-SELECT * FROM jobs LIMIT 3;
+SELECT * FROM jobs;
