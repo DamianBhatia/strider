@@ -102,5 +102,5 @@ export default styles = StyleSheet.create({
         color: COLORS.primary,
         fontSize: RFPercentage(2.5),
         paddingRight: '10%',
-    }
+    },
 })
