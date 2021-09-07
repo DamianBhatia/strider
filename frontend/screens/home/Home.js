@@ -164,4 +164,5 @@ export default Home = () => {
             <ActionButton size={60} icon='heart' color='#03fcba' />
         </View> */}
     </SafeAreaView>
-)
+    )
+}
