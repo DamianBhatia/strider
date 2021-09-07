@@ -31,5 +31,16 @@ export default styles = StyleSheet.create({
         flexWrap: 'wrap',
         height: hp(50),
         
+    },
+    h1:{
+        display:'flex',
+        textAlign: 'center',
+        fontSize: 40,
+        color: COLORS.primary
+    },
+    continue:{
+        display:'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
     }
 })

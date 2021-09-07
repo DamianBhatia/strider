@@ -11,7 +11,7 @@ export default Header = () => (
                 <Ionicons name="menu" size={32} color={COLORS.primary} />
             </View>
             <View style={styles.center}>
-                <Text style={styles.title}>strider</Text>
+                <Text style={styles.title}>strive</Text>
             </View>
             <View style={styles.right}>
                 <Feather name="message-circle" size={32} color={COLORS.primary} />
