@@ -32,8 +32,13 @@ router.route('/login/:email/:password').get((req,res)=>{
     let isGoodCredentials;
     db.query(getUser, [email],(err,results) => {
         if (err) throw err
-        const {rows: [{password: hash}]} = results
-        isGoodCredentials = dcrypt(password, hash)
+        if (results.rows.length > 0){
+            const {rows: [{password: hash}]} = results
+            isGoodCredentials = dcrypt(password, hash)
+        }else{
+            isGoodCredentials = false;
+        }
+        
         res.status(200).json(isGoodCredentials)
         
     })

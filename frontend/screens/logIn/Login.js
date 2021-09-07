@@ -51,8 +51,6 @@ const userLogin = async (email,password,history,onLoading) => {
     }
 }   
     
-
-
 /**
  * @param {object} history prop for pushing to new screen
  * @returns {jsx} renders loging screen
