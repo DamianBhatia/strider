@@ -38,7 +38,7 @@ const userLogin = async (email,password,history,onLoading) => {
             console.log(LoggedIn)
             onLoading(false)
             if(LoggedIn) {
-                history.push("/interests")
+                history.push("/home")
             }else {
                 alert("ERROR\nEmail or password is incorrect, please try again")
             }
@@ -79,6 +79,7 @@ export default Login = ({ history }) => {
                             style= {styles.TextInput}
                             placeholderTextColor = 'white'
                             value={password}
+                            secureTextEntry={true}
                             onChangeText={(text)=>onPassword(text)}
                         />
                     </View>

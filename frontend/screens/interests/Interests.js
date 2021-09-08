@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, ScrollView} from 'react-native'
 import styles from './styles'
-import Icon from '../../node_modules/@expo/vector-icons/Ionicons'
-import { COLORS } from '../../utilities/colors'
 import SelectButton from '../../components/selectButton/SelectButton'
 import CustomTextInput from '../../components/customTextInput/CustomTextInput'
+import { FontAwesome5 } from '@expo/vector-icons'; 
+import { COLORS } from '../../utilities/colors'
 
 /**
  * The Interests Component allows 
@@ -17,17 +17,17 @@ export default Interests = ({history}) => {
     return (
         <ScrollView>
             <View style = {styles.container}>
-                <View style = {styles.titleContainer}>
-                    <View style = {styles.title}>
-                        <Icon name="briefcase" color = {COLORS.primary} size={80}></Icon>
-                        <Text style={styles.h1}> Last Step.</Text>
-                        <Text style={styles.titleText}> Select the jobs you are interested in.</Text>
+                <View style={styles.header}>
+                    <View style ={styles.icon}>
+                        <FontAwesome5 name="briefcase" size={70} color={COLORS.primary}/>
                     </View>
+                    <Text style={styles.h1}>Last Step</Text>
+                    <Text style={styles.h2}>Select the type of positions you are interested in applying for</Text>
                 </View>
                 <CustomTextInput />
                 <View style={styles.SelectionContainer}>
                     {interests.map((label)=><SelectButton key={label} label={label}/>)} 
-                </View>
+                 </View>
                 <TouchableOpacity style = {styles.continue} onPress= {()=>history.push("/home")}><Text>Continue --{'>'}</Text></TouchableOpacity>
             </View>
         </ScrollView>
