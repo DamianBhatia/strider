@@ -7,7 +7,6 @@ import AppLoading from 'expo-app-loading'
 import Login from './screens/logIn/Login'
 import Interest from './screens/interests/Interests'
 import Signup from './screens/signup/Signup'
-import signupName from './screens/signup/signupName'
 import signupSchool from './screens/signup/signupSchool'
 
 export default App = () => {
@@ -31,9 +30,6 @@ export default App = () => {
           </Switch>
           <Switch>
             <Route exact path="/signup" component={Signup}/>
-         </Switch>
-         <Switch>
-            <Route exact path="/signup/name" component={signupName}/>
          </Switch>
          <Switch>
             <Route exact path="/signup/education" component={signupSchool}/>

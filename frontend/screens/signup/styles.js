@@ -8,27 +8,30 @@ export default styles = StyleSheet.create({
         flex:1,
     },
     header: {
-        height: hp(35),
+        height: hp(30),
         display: "flex",
         justifyContent: 'center',
         //backgroundColor: 'red'
     },
     h1:{
         display:'flex',
-        textAlign: 'center',
+        justifyContent:'flex-start',
         fontSize: 40,
-        color: COLORS.primary
+        marginLeft: '5%',
+        color: COLORS.primary,
+        fontWeight: 'bold'
     },
     h2: {
         marginTop: '5%',
         display:'flex',
-        textAlign: 'center',
-        fontSize: 25,
-        color: COLORS.primary
+        fontSize: 18,
+        marginLeft: '5%',
+        color: COLORS.greyText,
+        marginBottom: '10%'
     },
     body: {
-        //backgroundColor: 'blue',
-        height: hp(50),
+       // backgroundColor: 'blue',
+        height: hp(40),
         display: 'flex',
         flexDirection: 'column',
         justifyContent:'space-evenly',
@@ -42,20 +45,17 @@ export default styles = StyleSheet.create({
         height:'25%',
     },
     Text:{
-        fontSize: 30,
-        color: COLORS.primary,
+        fontSize: 20,
         marginBottom: "2%"
     },
     Input: {
-        backgroundColor: COLORS.grey,
         opacity: 0.3,
-        height: '50%',
-        borderBottomWidth: 5,
-        borderRadius: 10,
+        height: '25%',
+        borderBottomWidth: 2,
         marginRight: "5%",
-        borderColor: COLORS.primary,
-        fontSize: 30,
-        color: 'black',
+        borderColor: COLORS.greyText,
+        fontSize: 18,
+        marginLeft: '1%'
         
     },
     icon: {
@@ -67,8 +67,24 @@ export default styles = StyleSheet.create({
         marginTop: "15%"
     },
     continue:{
+        height: hp(6),
         display:'flex',
         flexDirection: 'row',
         justifyContent: 'flex-end',
+        marginRight: '5%',
+        marginTop: '35%',
+        //backgroundColor:'red'
+    },
+    next:{
+        backgroundColor:COLORS.primary,
+        display: 'flex',
+        justifyContent: 'center',
+        paddingHorizontal: '6%',
+        borderRadius:3,
+        color: 'white'
+    },
+    nextText :{
+        color:'white',
+        fontSize: 20
     }
 })
