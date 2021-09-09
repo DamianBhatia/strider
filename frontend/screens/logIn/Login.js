@@ -7,29 +7,33 @@ import LoginButton from '../../components/LoginPage/LoginButton'
 import GoogleIcon from '../../assets/icons/google.svg'
 import axios from 'axios'
 import LoadingState from '../../components/loadingState/LoadingState'
+import ErrorText from '../../components/errorText/ErrorText'
+import {COLORS} from '../../utilities/colors'
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen'
 
 const backgroundImage = require("../../assets/images/building.png")
 
-const newUser = async () => {    
-    console.log('fired')
-    await axios.post('https://southportstrive.herokuapp.com/users/add',{
-        firstName: 'Aco',
-        lastName: 'Stojanovic',
-        email: 'aca12365@outlook.com',
-        password: 'Security12365!'
-    }).then(({request})=>{
-        console.log(request._response)
-    }).catch(({ message, request })=>{
-        console.log(message)
-    })
-}
+const userLogin = async (email,password,history,onLoading,onError) => {
 
-const userLogin = async (email,password,history,onLoading) => {
-
-    if (!email){
-        alert("Please enter an email")
+    if(!email && !password){
+        onError({
+            isError: true,
+            type: '',
+            message:'Please enter an email and password'
+        })
+    }
+    else if (!email){
+        onError({
+            isError: true,
+            type: 'email',
+            message:'Please enter an email'
+        })
     }else if(!password){
-        alert("Please enter a password")
+        onError({
+            isError: true,
+            type: 'pass',
+            message:'Please enter a password'
+        })
     }else{
         try{
             console.log("fired userLogin")
@@ -40,7 +44,11 @@ const userLogin = async (email,password,history,onLoading) => {
             if(LoggedIn) {
                 history.push("/home")
             }else {
-                alert("ERROR\nEmail or password is incorrect, please try again")
+                onError(  {
+                    isError: true,
+                    type: '',
+                    message:'Email or password is incorrect, please try again'
+                })
             }
     
         } catch(e){
@@ -59,6 +67,11 @@ export default Login = ({ history }) => {
     const [email, onEmail] = useState('')
     const [password, onPassword] = useState('')
     const [loading, onLoading] = useState(false)
+    const [error, onError] =useState({
+        isError: false,
+        type: '',
+        message: ''
+    })
     //const [error, onError] = useState("Email or password is incorrect, please try again") *Explore this feature later for now we use alerts
     return(
         <View style = {styles.container}>
@@ -69,23 +82,38 @@ export default Login = ({ history }) => {
                     <View>
                         <TextInput 
                             placeholder={'email'}
-                            style= {styles.TextInput}
-                            placeholderTextColor = 'white'
+                            style= {{ color: COLORS.background,
+                                borderBottomColor: error.isError && error.type!='pass'? 'red':COLORS.background,
+                                borderBottomWidth: 2,
+                                fontSize: 30,
+                                marginBottom: "10%",
+                                width: wp(80),
+                                maxWidth: wp(80)}}
+                            placeholderTextColor = {COLORS.background}
                             value={email}
                             onChangeText={(text)=>onEmail(text)}
+                            onFocus={()=>onError({isError:false,type:'',message: ''})}
                         />
                         <TextInput
                             placeholder={"password"}
-                            style= {styles.TextInput}
-                            placeholderTextColor = 'white'
+                            style= {{ color: COLORS.background,
+                                borderBottomColor: error.isError && error.type!='email'?'red':COLORS.background,
+                                borderBottomWidth: 2,
+                                fontSize: 30,
+                                marginBottom: "10%",
+                                width: wp(80),
+                                maxWidth: wp(80)}}
+                            placeholderTextColor ={COLORS.background}
                             value={password}
                             secureTextEntry={true}
                             onChangeText={(text)=>onPassword(text)}
+                            onFocus={()=>onError({isError:false,type:'',message: ''})}
                         />
                     </View>
+                    {error.isError && <ErrorText error={error.message}/>}
                 </View>
                 <View style={styles.buttonsContainer}>
-                    <LoginButton onPress = {()=>userLogin(email,password,history,onLoading)} history = {history} label = {"Sign In"}/>
+                    <LoginButton onPress = {()=>userLogin(email,password,history,onLoading,onError)} history = {history} label = {"Sign In"}/>
                     <View style={styles.orContainer}>
                         <Text style={styles.or}> or </Text>
                     </View>

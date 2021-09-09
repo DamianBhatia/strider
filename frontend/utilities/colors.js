@@ -3,5 +3,6 @@ export const COLORS = {
     success: '#5FB067',
     background: '#FFF',
     grey: '#E7E7E7',
-    greyText: '#8A8A8A'
+    greyText: '#8A8A8A',
+    redError: '#f48b8b'
 }
