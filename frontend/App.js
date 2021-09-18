@@ -7,7 +7,6 @@ import AppLoading from 'expo-app-loading'
 import Login from './screens/logIn/Login'
 import Interest from './screens/interests/Interests'
 import Signup from './screens/signup/Signup'
-import signupName from './screens/signup/signupName'
 import signupSchool from './screens/signup/signupSchool'
 
 export default App = () => {
@@ -18,6 +17,9 @@ export default App = () => {
     'Montserrat-Bold-700': require('./assets/fonts/Montserrat/Montserrat-Bold-700.ttf'),
     'Montserrat-Medium-500': require('./assets/fonts/Montserrat/Montserrat-Medium-500.ttf'),
     'Aleo-Regular': require('./assets/fonts/Aleo/Aleo-Regular.otf'),
+    'Roboto-Medium': require('./assets/fonts/Roboto/Roboto-Medium.ttf'),
+    'Roboto-Regular': require('./assets/fonts/Roboto/Roboto-Regular.ttf'),
+    'Roboto-Light': require('./assets/fonts/Roboto/Roboto-Light.ttf'),
   });
 
   if (!fontsLoaded) {
@@ -31,13 +33,10 @@ export default App = () => {
           </Switch>
           <Switch>
             <Route exact path="/signup" component={Signup}/>
-         </Switch>
-         <Switch>
-            <Route exact path="/signup/name" component={signupName}/>
-         </Switch>
-         <Switch>
+          </Switch>
+          <Switch>
             <Route exact path="/signup/education" component={signupSchool}/>
-         </Switch>
+          </Switch>
           <Switch>
             <Route exact path="/interests" component={Interest}/>
           </Switch>

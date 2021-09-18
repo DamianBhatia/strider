@@ -1,0 +1,28 @@
+name: Node.js CI
+
+# run the ci pipeline on the backend folder
+defaults:
+  run:
+    working-directory: backend
+
+# run this pipeline only when dev branch is changed
+on:
+  push:
+    branched: [ dev ]
+
+jobs:
+  # Build the node.js server and run unit tests
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test

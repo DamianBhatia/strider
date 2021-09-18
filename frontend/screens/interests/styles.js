@@ -7,23 +7,6 @@ export default styles = StyleSheet.create({
     container: {
         flex:1,
     },
-    titleContainer: {
-        height: hp(25),
-        alignItems:'center',
-        justifyContent: 'center',
-
-    },
-    title: {
-        marginTop: "30%",
-        alignItems: 'center'
-    },
-    titleText: {
-        color: COLORS.primary,
-        fontSize: 18,
-        marginTop: "2%",
-        fontWeight: 'bold',
-        fontFamily: 'Montserrat-Bold-700'
-    },
     SelectionContainer: {
         alignItems: 'center',
         flexDirection: 'row',
@@ -32,15 +15,38 @@ export default styles = StyleSheet.create({
         height: hp(50),
         
     },
-    h1:{
-        display:'flex',
-        textAlign: 'center',
-        fontSize: 40,
-        color: COLORS.primary
-    },
     continue:{
         display:'flex',
         flexDirection: 'row',
         justifyContent: 'flex-end',
-    }
+    },
+    header: {
+        height: hp(30),
+        display: "flex",
+        justifyContent: 'center',
+        //backgroundColor: 'red'
+    },
+    h1:{
+        display:'flex',
+        justifyContent:'flex-start',
+        fontSize: 40,
+        marginLeft: '5%',
+        color: COLORS.primary,
+        fontWeight: 'bold'
+    },
+    h2: {
+        marginTop: '5%',
+        display:'flex',
+        fontSize: 18,
+        marginLeft: '5%',
+        color: COLORS.greyText,
+    },
+    icon: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent:'center',
+        alignItems: 'center',
+        marginBottom: '4%',
+        marginTop: "15%"
+    },
 })

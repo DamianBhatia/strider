@@ -6,6 +6,7 @@ import Header from '../../components/header/Header'
 import JobCard from '../../components/jobCard/JobCard'
 import ActionButton from '../../components/actionButton/ActionButton'
 import { SafeAreaView } from 'react-navigation'
+import axios from 'axios'
 
 const baseURL = 'https://southportstrive.herokuapp.com/jobs/get';
 

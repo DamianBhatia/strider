@@ -5,7 +5,7 @@ import { FontAwesome5 } from '../../node_modules/@expo/vector-icons'
 
 const jobImage = require('../../assets/images/test_job.png')
 
-export default JobCard = () => {
+export default JobCard = ({jobTitle,jobLocation}) => {
     return (
         <View style={styles.container}>
                 <Image style={styles.jobImage} source={jobImage}/>
