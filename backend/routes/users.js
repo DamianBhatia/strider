@@ -3,6 +3,7 @@ const { create } = require('domain');
 const fs = require('fs');
 const {db} =require('../services/dbConnection')
 const {encrypt,dcrypt,test} = require('../services/crypt')
+
 /**
  * add user to db end point 
  */
@@ -43,8 +44,7 @@ router.route('/login/:email/:password').get((req,res)=>{
         
     })
 
-    return isGoodCredentials
-    
+    return isGoodCredentials 
 })
 
 module.exports = router;

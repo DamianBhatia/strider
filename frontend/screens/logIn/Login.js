@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {View, Image, ImageBackground,Text, TouchableOpacity, TextInput, Dimensions, Animated } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
-import { SvgUri } from 'react-native-svg'
 import styles from './styles'
 import LoginHeader from '../../components/LoginPage/LoginHeader'
 import LoginButton from '../../components/LoginPage/LoginButton'
@@ -12,8 +11,6 @@ import { SafeAreaView } from 'react-navigation'
 
 import BagIcon from "../../assets/icons/office-bag.svg";
 import { COLORS } from '../../utilities/colors'
-
-const backgroundImage = require("../../assets/images/building.png")
 
 const newUser = async () => {    
     console.log('fired')
@@ -99,7 +96,6 @@ export default Login = ({ history }) => {
         Animated.timing(pos, {toValue: 1, duration: 700, useNativeDriver: true}).start();
     }, [pos]);
 
-    //const [error, onError] = useState("Email or password is incorrect, please try again") *Explore this feature later for now we use alerts
     return(
         <SafeAreaView>
             <StatusBar />
