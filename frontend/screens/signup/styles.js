@@ -11,7 +11,6 @@ export default styles = StyleSheet.create({
         height: hp(30),
         display: "flex",
         justifyContent: 'center',
-        //backgroundColor: 'red'
     },
     h1:{
         display:'flex',
@@ -30,14 +29,12 @@ export default styles = StyleSheet.create({
         marginBottom: '10%'
     },
     body: {
-       // backgroundColor: 'blue',
         height: hp(40),
         display: 'flex',
         flexDirection: 'column',
         justifyContent:'space-evenly',
     },
     mainBody: {
-        //backgroundColor: 'red',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-start',
