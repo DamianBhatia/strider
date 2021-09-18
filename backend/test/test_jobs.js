@@ -1,10 +1,5 @@
-const chai = require('chai')
 const request = require('supertest')
-const chaiHttp = require("chai-http")
-const expect = chai.expect
 const server = require("../server.js");
-
-// chai.use(chaiHttp)
 
 // UNIT TESTING JOBS API
 
