@@ -1,5 +1,5 @@
-# strider
-Job Finder React-Native Application
+# strive
+Internship Finder React-Native Application.
 
 ## CI/CD Pipelines
 ### Backend
