@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import {View, Image, ImageBackground,Text, TouchableOpacity, TextInput, Dimensions, Animated } from 'react-native'
+import {View,Text, TouchableOpacity, Animated } from 'react-native'
 import { StatusBar } from 'expo-status-bar'
 import styles from './styles'
-import LoginHeader from '../../components/LoginPage/LoginHeader'
-import LoginButton from '../../components/LoginPage/LoginButton'
 import GoogleIcon from '../../assets/icons/google.svg'
 import axios from 'axios'
 import LoadingState from '../../components/loadingState/LoadingState'
@@ -55,7 +53,7 @@ const userLogin = async (email,password,history,onLoading) => {
     
 /**
  * @param {object} history prop for pushing to new screen
- * @returns {jsx} renders loging screen
+ * @returns {jsx} renders logging screen
  */
 export default Login = ({ history }) => {
     const [email, onEmail] = useState('')
@@ -127,45 +125,7 @@ export default Login = ({ history }) => {
                 </View>  
             </View>
            
-        </SafeAreaView>
-
-        // <View style = {styles.container}>
-        //     <StatusBar /> 
-        //     <ImageBackground source = {backgroundImage}  resizeMode="cover" style={styles.image} imageStyle={{ opacity: 0.6 }}>
-        //         <LoginHeader />
-        //         <View style= {styles.TextInputContainer}>
-        //             <View>
-        //                 <TextInput 
-        //                     placeholder={'email'}
-        //                     style= {styles.TextInput}
-        //                     placeholderTextColor = 'white'
-        //                     value={email}
-        //                     onChangeText={(text)=>onEmail(text)}
-        //                 />
-        //                 <TextInput
-        //                     placeholder={"password"}
-        //                     style= {styles.TextInput}
-        //                     placeholderTextColor = 'white'
-        //                     value={password}
-        //                     secureTextEntry={true}
-        //                     onChangeText={(text)=>onPassword(text)}
-        //                 />
-        //             </View>
-        //         </View>
-        //         <View style={styles.buttonsContainer}>
-        //             <LoginButton onPress = {()=>userLogin(email,password,history,onLoading)} history = {history} label = {"Sign In"}/>
-        //             <View style={styles.orContainer}>
-        //                 <Text style={styles.or}> or </Text>
-        //             </View>
-        //             <LoginButton history = {history} label = {"Sign In with Google"} icon = {<GoogleIcon height = {20} width = {30} />}/>
-        //         </View>
-        //         <View style={styles.signIn}>
-        //             <Text style={{color: 'white', fontSize: 18}}>Don't have an account?</Text>
-        //             <TouchableOpacity onPress = {()=>{history.push('/signup')}}><Text style={styles.signInText}>Sign Up</Text></TouchableOpacity>
-        //         </View>
-        //     </ImageBackground>
-        //     {loading && <LoadingState loading = {loading}/>}
-        //  </View>     
+        </SafeAreaView>   
     )
 }
 

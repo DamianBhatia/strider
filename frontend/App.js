@@ -33,10 +33,10 @@ export default App = () => {
           </Switch>
           <Switch>
             <Route exact path="/signup" component={Signup}/>
-        </Switch>
-        <Switch>
+          </Switch>
+          <Switch>
             <Route exact path="/signup/education" component={signupSchool}/>
-        </Switch>
+          </Switch>
           <Switch>
             <Route exact path="/interests" component={Interest}/>
           </Switch>
