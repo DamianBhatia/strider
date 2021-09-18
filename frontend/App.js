@@ -17,6 +17,9 @@ export default App = () => {
     'Montserrat-Bold-700': require('./assets/fonts/Montserrat/Montserrat-Bold-700.ttf'),
     'Montserrat-Medium-500': require('./assets/fonts/Montserrat/Montserrat-Medium-500.ttf'),
     'Aleo-Regular': require('./assets/fonts/Aleo/Aleo-Regular.otf'),
+    'Roboto-Medium': require('./assets/fonts/Roboto/Roboto-Medium.ttf'),
+    'Roboto-Regular': require('./assets/fonts/Roboto/Roboto-Regular.ttf'),
+    'Roboto-Light': require('./assets/fonts/Roboto/Roboto-Light.ttf'),
   });
 
   if (!fontsLoaded) {
@@ -30,10 +33,10 @@ export default App = () => {
           </Switch>
           <Switch>
             <Route exact path="/signup" component={Signup}/>
-         </Switch>
-         <Switch>
+        </Switch>
+        <Switch>
             <Route exact path="/signup/education" component={signupSchool}/>
-         </Switch>
+        </Switch>
           <Switch>
             <Route exact path="/interests" component={Interest}/>
           </Switch>

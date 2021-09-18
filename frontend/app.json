@@ -11,9 +11,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      
-    } 
+      "supportsTablet": true
+    },
+    "splash": {
+      "image": "assets/images/splash.png",
+      "backgroundColor": "#ffffff"
+    }
   },
   "infoPlist": {
     "NSAppTransportSecurity": {
