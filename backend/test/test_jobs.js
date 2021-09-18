@@ -1,7 +1,7 @@
 const request = require('supertest')
 const server = require("../server.js");
 
-// UNIT TESTING JOBS API
+// UNIT TESTING JOBS API.
 
 describe("Jobs API Unit Test", () => {
     it('should retrieve 3 jobs from the jobs database as JSON', done => {
